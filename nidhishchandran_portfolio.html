@@ -205,7 +205,7 @@
 
   .btn-secondary:hover { border-color: var(--ink); transform: translateY(-1px); }
 
-  .btn-download {
+  .btn-download, .btn {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -221,7 +221,7 @@
     transition: background 0.2s, color 0.2s, transform 0.2s;
   }
 
-  .btn-download:hover {
+  .btn-download:hover, .btn:hover {
     background: var(--accent);
     color: #fff;
     transform: translateY(-1px);
@@ -810,7 +810,7 @@
   }
 
   /* MEDIA QUERIES */
-  @media (max-width: 900px) {
+  @media (max-width: 768px) {
     nav { padding: 16px 24px; }
     
     .nav-toggle { display: flex; }
@@ -836,31 +836,31 @@
     .nav-toggle.active span:nth-child(2) { opacity: 0; }
     .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    section { padding: 80px 24px; }
-    .hero { padding: 0 24px 80px; }
+    section { padding: 60px 24px; }
+    .hero { padding: 0 24px 60px; }
     .hero-scroll { display: none; }
     .hero-bg-text { font-size: 80px; left: 0; top: 20%; }
-    .hero h1 { font-size: clamp(42px, 10vw, 64px); }
+    .hero h1 { font-size: clamp(36px, 10vw, 56px); }
     
-    .about-grid { grid-template-columns: 1fr; gap: 48px; }
-    .about-meta { border-left: none; border-top: 1px solid var(--rule); padding-left: 0; padding-top: 36px; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .about-meta { border-left: none; border-top: 1px solid var(--rule); padding-left: 0; padding-top: 32px; }
     .skills-grid { grid-template-columns: 1fr; }
     .achieve-grid { grid-template-columns: 1fr; }
-    .achieve-card.full-width { grid-template-columns: 1fr; gap: 24px; }
-    .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-    .project-item { grid-template-columns: 1fr; gap: 16px; padding: 32px 0; }
+    .achieve-card.full-width { grid-template-columns: 1fr; gap: 20px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .project-item { grid-template-columns: 1fr; gap: 12px; padding: 24px 0; }
     .project-item::before { left: -24px; right: -24px; }
     .project-num { display: none; }
-    .edu-item { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .edu-item { flex-direction: column; align-items: flex-start; gap: 12px; }
     .edu-body { text-align: left; }
     footer { flex-direction: column; gap: 12px; text-align: center; padding: 32px 24px; }
   }
 
   @media (max-width: 480px) {
-    .section-title { font-size: 32px; }
-    .hero h1 { font-size: 40px; }
+    .section-title { font-size: 28px; }
+    .hero h1 { font-size: 36px; }
     .hero-desc { font-size: 14px; }
-    .btn-primary, .btn-secondary, .btn-download { width: 100%; justify-content: center; }
+    .btn-primary, .btn-secondary, .btn-download, .btn { width: 100%; justify-content: center; }
     .hero-ctas { flex-direction: column; width: 100%; }
   }
 </style>
@@ -881,13 +881,13 @@
     <li><a href="#education">Education</a></li>
     <li><a href="#certifications">Certifications</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="./assets/resume.pdf" download="Nidhish_Chandran_Resume.pdf" class="nav-resume-btn">↓ Resume</a></li>
+    <li><a href="./assets/resume.pdf" download="resume.pdf" class="nav-resume-btn">↓ Resume</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-bg-text">MCA</div>
+  <div class="hero-bg-text">FRESHER</div>
   <div class="hero-content">
     <div class="hero-tag">Available for Opportunities</div>
     <h1>Nidhish<br><em>Chandran</em></h1>
@@ -897,7 +897,7 @@
     <div class="hero-ctas">
       <a href="#projects" class="btn-primary">View Projects ↓</a>
       <a href="#contact" class="btn-secondary">Get in Touch →</a>
-      <a href="./assets/resume.pdf" download="Nidhish_Chandran_Resume.pdf" class="btn-download">↓ Download Resume</a>
+      <a href="./assets/resume.pdf" download class="btn">Download Resume</a>
     </div>
   </div>
   <div class="hero-scroll">
@@ -1203,7 +1203,7 @@
   // Nav shrink on scroll
   const nav = document.querySelector('nav');
   window.addEventListener('scroll', () => {
-    if (window.innerWidth > 900) {
+    if (window.innerWidth > 768) {
       nav.style.padding = window.scrollY > 60 ? '12px 60px' : '20px 60px';
     } else {
       nav.style.padding = window.scrollY > 60 ? '10px 24px' : '16px 24px';
